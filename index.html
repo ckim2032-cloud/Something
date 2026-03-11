@@ -1,10 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Something</title>
-</head
-<body>
-   <h5>This is something</h5>
-        <p>Hello I am trying to learn.<p>  
-   </h5>
- </body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML: The Language of the Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .code-card {
+            background: #2d3436;
+            color: #dfe6e9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag { color: #ff7675; }
+        .attr { color: #fab1a0; }
+        .val { color: #55efc4; }
+        .comment { color: #636e72; font-style: italic; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed">
+
+    <!-- Header Section -->
+    <header class="gradient-bg text-white py-16 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Mastering HTML Basics</h1>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto">HTML is the skeleton of every website. It uses "Tags" to tell the browser what to show.</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto py-12 px-6">
+        
+        <!-- Section 1: The Tag Structure -->
+        <section class="mb-16">
+            <div class="flex items-center mb-4">
+                <span class="bg-pink-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">1</span>
+                <h2 class="text-2xl font-bold">The Anatomy of a Tag</h2>
+            </div>
+            <p class="mb-6 text-slate-600">Most HTML elements have an <strong>opening</strong> tag and a <strong>closing</strong> tag. The closing tag always has a forward slash <code>/</code>.</p>
+            
+            <div class="code-card">
+                <p><span class="tag">&lt;h1&gt;</span>This is a big heading<span class="tag">&lt;/h1&gt;</span></p>
+                <p><span class="tag">&lt;p&gt;</span>This is a simple paragraph.<span class="tag">&lt;/p&gt;</span></p>
+            </div>
+        </section>
+
+        <!-- Section 2: Headings & Paragraphs -->
+        <section class="mb-16">
+            <div class="flex items-center mb-4">
+                <span class="bg-orange-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">2</span>
+                <h2 class="text-2xl font-bold">Text Elements</h2>
+            </div>
+            <p class="mb-6 text-slate-600">There are six levels of headings. <code>h1</code> is the most important (and biggest), while <code>h6</code> is the smallest.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border p-4 rounded-lg bg-white">
+                    <h1 class="text-3xl font-bold border-b pb-2 mb-2">Heading 1</h1>
+                    <h2 class="text-2xl font-semibold mb-2">Heading 2</h2>
+                    <p class="text-sm text-slate-500">Regular paragraph text looks like this.</p>
+                </div>
+                <div class="code-card text-sm">
+                    <p><span class="tag">&lt;h1&gt;</span>Heading 1<span class="tag">&lt;/h1&gt;</span></p>
+                    <p><span class="tag">&lt;h2&gt;</span>Heading 2<span class="tag">&lt;/h2&gt;</span></p>
+                    <p><span class="tag">&lt;p&gt;</span>Regular paragraph...<span class="tag">&lt;/p&gt;</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Links and Attributes -->
+        <section class="mb-16">
+            <div class="flex items-center mb-4">
+                <span class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">3</span>
+                <h2 class="text-2xl font-bold">Links & Attributes</h2>
+            </div>
+            <p class="mb-6 text-slate-600">Attributes give tags extra information. For a link, we use the <code>href</code> attribute to say where the link goes.</p>
+            
+            <div class="code-card mb-4">
+                <p><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"https://google.com"</span><span class="tag">&gt;</span>Visit Google<span class="tag">&lt;/a&gt;</span></p>
+            </div>
+            <div class="p-4 bg-blue-50 border-l-4 border-blue-500 italic">
+                Tip: The "a" stands for "Anchor"!
+            </div>
+        </section>
+
+        <!-- Interactive Playground -->
+        <section class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-8 text-center">
+            <h3 class="text-xl font-bold mb-2">See it in Action</h3>
+            <p class="mb-6 text-slate-500">Click below to see how HTML elements render in a real browser.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="changeDemo('title')" class="bg-slate-800 text-white px-4 py-2 rounded hover:bg-slate-700">Show &lt;h1&gt;</button>
+                <button onclick="changeDemo('link')" class="bg-slate-800 text-white px-4 py-2 rounded hover:bg-slate-700">Show &lt;a&gt;</button>
+                <button onclick="changeDemo('list')" class="bg-slate-800 text-white px-4 py-2 rounded hover:bg-slate-700">Show &lt;ul&gt;</button>
+            </div>
+
+            <div id="html-preview" class="mt-8 p-6 bg-slate-100 rounded-lg min-h-[100px] flex items-center justify-center border">
+                <span class="text-slate-400">Click a button to see the HTML result</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 py-8 text-center text-slate-500 text-sm border-t border-slate-200">
+        <p>HTML: The foundation of your digital world.</p>
+    </footer>
+
+    <script>
+        function changeDemo(type) {
+            const preview = document.getElementById('html-preview');
+            if (type === 'title') {
+                preview.innerHTML = '<h1 class="text-4xl font-black text-red-500">I am an H1 tag!</h1>';
+            } else if (type === 'link') {
+                preview.innerHTML = '<a href="#" class="text-blue-600 underline text-xl font-bold">I am a clickable link!</a>';
+            } else if (type === 'list') {
+                preview.innerHTML = '<ul class="list-disc text-left inline-block"><li class="text-lg">Item 1</li><li class="text-lg">Item 2</li></ul>';
+            }
+        }
+    </script>
+</body>
+</html>

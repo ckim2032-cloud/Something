@@ -1,5 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<h1>I am trying to learn.</h1>
-<h2>Is this Heading 2?</h2>
-<p>Test Test Test<p>
+<html>
+<head>
+<style>
+  /* 1. The Container (The Canvas) */
+  .grid-container {
+    display: grid;
+    /* This creates a 5x5 grid of 20px squares */
+    grid-template-columns: repeat(5, 20px);
+    grid-template-rows: repeat(5, 20px);
+    gap: 0; /* Ensures pixels touch each other */
+    border: 2px solid #333;
+    width: fit-content;
+  }
+
+  /* 2. The Pixel Styles */
+  .p { width: 20px; height: 20px; }
+  .black { background-color: #000; }
+  .white { background-color: #fff; }
+  .red   { background-color: #ff0000; }
+</style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="p white"></div><div class="p black"></div><div class="p white"></div><div class="p black"></div><div class="p white"></div>
+    <div class="p black"></div><div class="p red"></div><div class="p red"></div><div class="p red"></div><div class="p black"></div>
+    <div class="p white"></div><div class="p red"></div><div class="p red"></div><div class="p red"></div><div class="p white"></div>
+    <div class="p black"></div><div class="p red"></div><div class="p red"></div><div class="p red"></div><div class="p black"></div>
+    <div class="p white"></div><div class="p black"></div><div class="p white"></div><div class="p black"></div><div class="p white"></div>
+  </div>
+
+</body>
+</html>
